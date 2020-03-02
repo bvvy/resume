@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>简历</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="icon.css" type="text/css">
+  <style type="text/css">
+    .container {
+      padding-top: 80px;
+      background-color: #cccccc;
+    }
+
+    .page {
+      padding: 50px;
+      width: 695px;
+      background-color: #fff;
+      margin: auto;
+    }
+
+    .font-16 {
+      font-size: 16px;
+    }
+    .page-break {
+      padding-top: 50px;
+    }
+
+  </style>
+  <script src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
+  <script src="../node_modules/jspdf/dist/jspdf.min.js"></script>
+  <script src="../node_modules/html2canvas/dist/html2canvas.min.js"></script>
+  <script src="../node_modules/html2pdf.js/dist/html2pdf.js"></script>
+  <script>
+    function toPdf() {
+      const element = document.getElementById('page');
+      html2pdf().set({
+        pagebreak: { mode: 'avoid-all', before: '.page-break' }
+      }).from(element).save()
+    }
+  </script>
+
+</head>
+<body>
+<button onclick="toPdf()">转pdf</button>
+<div class="container">
+  <div class="page" id="page">
+    <div class="flex ">
+      <img src="avatar.jpg" width="100" height="100">
+      <div class="flex flex-direction justify-center " style="width: 80px">
+        <div class="text-bold font-16">bvvy</div>
+        <div class="text-gray">男</div>
+      </div>
+      <div class="flex-sub">
+        <div>
+          <div class="text-gray"><i class="cuIcon-selection margin-right-sm text-brown"></i>工作经验</div>
+          <div class="margin-top-sm">3年</div>
+        </div>
+        <div class="margin-top-xl">
+          <div class="text-gray"><i class="cuIcon-like margin-right-sm text-orange"></i>求职意向</div>
+          <div class="margin-top-sm">Java开发</div>
+        </div>
+      </div>
+      <div class="flex-sub">
+        <div>
+          <div class="text-gray"><i class="cuIcon-location margin-right-sm text-red"></i>居住地</div>
+          <div class="margin-top-sm">广东 深圳</div>
+        </div>
+        <div class="margin-top-xl">
+          <div class="text-gray"><i class="cuIcon-phone margin-right-sm text-olive"></i>手机</div>
+          <div class="margin-top-sm">12345678910</div>
+        </div>
+      </div>
+      <div class="flex-sub">
+        <div>
+          <div class="text-gray"><i class="cuIcon-card margin-right-sm text-cyan"></i>籍贯</div>
+          <div class="margin-top-sm">四川 宜宾</div>
+        </div>
+        <div class="margin-top-xl">
+          <div class="text-gray"><i class="cuIcon-mail margin-right-sm text-yellow"></i>邮箱</div>
+          <div class="margin-top-sm">bvvy@qq.com</div>
+        </div>
+      </div>
+      <div class="flex-sub">
+        <div>
+          <div class="text-gray"><i class="iconfont-age margin-right-sm text-blue"></i>年龄</div>
+          <div class="margin-top-sm">24岁</div>
+        </div>
+        <div class="margin-top-xl">
+          <div class="text-gray"><i class="cuIcon-github margin-right-sm text-black"></i>Github</div>
+          <div class="margin-top-sm">github.com/bvvy</div>
+        </div>
+      </div>
+    </div>
+    <div class="margin-top-xl">
+      <div class="text-bold font-16"><i class="iconfont-profession margin-right-sm text-blue"></i>教育背景</div>
+      <div class="flex justify-between margin-top-xl">
+        <div>
+          <div class="text-gray"><i class="iconfont-school margin-right-sm text-blue"></i>学校</div>
+          <div class="margin-top-sm">xxxxxxx大学</div>
+        </div>
+        <div>
+          <div class="text-gray"><i class="iconfont-profession margin-right-sm text-cyan"></i>专业</div>
+          <div class="margin-top-sm">软件工程</div>
+        </div>
+        <div>
+          <div class="text-gray"><i class="iconfont-qualification margin-right-sm text-blue"></i>学历</div>
+          <div class="margin-top-sm">本科</div>
+        </div>
+        <div>
+          <div class="text-gray"><i class="cuIcon-time margin-right-sm text-yellow"></i>时间</div>
+          <div class="margin-top-sm">2013-2017</div>
+        </div>
+      </div>
+    </div>
+    <div class="margin-top-xl">
+      <div class="text-bold font-16"><span class="cuIcon-sort margin-right-sm text-brown"></span>就业&项目经历</div>
+      <div>
+        <div>
+          <div class="text-bold margin-top-xl">xxxx有限公司 - 全栈开发</div>
+          <div class="text-gray margin-top-sm">2018-11 至 2020-1</div>
+        </div>
+        <div class="cu-timeline">
+          <div class="cu-item text-red cuIcon-evaluate_fill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-red">某某某测试平台</span>
+              <div class="margin-top-sm">技术栈: 数据处理: Snowflake + Mysql + S3 + Tableau 部署: docker</div>
+              <div class="margin-left-xl">前端: vue + element-ui + echart 后端: Spring-boot + mybatis-plus</div>
+              <div class="margin-top-sm">作用: 通过仪器设备自动话运行车辆并收集车辆和仪器信息进行统计和分析</div>
+              <div class="margin-top-sm">我的工作: 自动化运行车辆并统计车辆数据和仪器数据</div>
+            </div>
+          </div>
+          <div class="cu-item text-cyan cuIcon-noticefill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-cyan">某某某测试平台</span>
+              <div class="margin-top-sm">技术栈: Spring-boot + mybatis-plus + Mysql + vue + element-ui</div>
+              <div class="margin-top-sm">作用: 对车辆进行挂机测试,自动化测试制定与测试等功能</div>
+              <div class="margin-top-sm">我的工作: 全部</div>
+            </div>
+          </div>
+          <div class="cu-item text-brown cuIcon-emoji">
+            <div class="content shadow-blur">
+              <span class="text-bold text-brown">Diago</span>
+              <div class="margin-top-sm">技术栈: jersey + Spring + hibernate + Mysql + vue + element-ui</div>
+              <div class="margin-top-sm">作用: 对车辆进行诊断修复</div>
+              <div class="margin-top-sm">我的工作: 负责后台诊断规则制定和诊断结果的存储和统计</div>
+            </div>
+          </div>
+          <div class="cu-item text-yellow cuIcon-favor">
+            <div class="content shadow-blur">
+              <span class="text-bold text-yellow">日志抓取和告警</span>
+              <div class="margin-top-sm">技术栈: elkb</div>
+              <div class="margin-top-sm">作用: 抓取日志分析展示和短信告警</div>
+              <div class="margin-top-sm">我的工作: 全部</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-break">
+        <div>
+          <div class="text-bold margin-top-xl">某某某有限公司 - Java & 前端开发</div>
+          <div class="text-gray margin-top-sm">2018-6 至 2018-11</div>
+        </div>
+        <div class="cu-timeline">
+          <div class="cu-item text-cyan cuIcon-noticefill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-cyan">某某某管理平台</span>
+              <div class="margin-top-sm">技术栈: Spring-boot + Jpa + Querydsl + Mysql + vue + element-ui</div>
+              <div class="margin-top-sm">作用: 给船公司发布航程、管理订单和财务的平台</div>
+              <div class="margin-top-sm">我的工作: 前期平台的搭建、对基础权限等功能和对航程管理的开发</div>
+            </div>
+          </div>
+          <div class="cu-item text-brown cuIcon-evaluate_fill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-brown">外综管理平台</span>
+              <div class="margin-top-sm">技术栈: Spring + JdbcTemplate + Mysql + Velocity </div>
+              <div class="margin-top-sm">作用: 管理产品、订单、财务和退税的平台</div>
+              <div class="margin-top-sm">我的工作: 对接中信银行和对接税务平台</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="text-bold margin-top-xl">某某某有限公司 - Java & 前端开发</div>
+          <div class="text-gray margin-top-sm">2017-09 至 2018-05</div>
+        </div>
+        <div class="cu-timeline">
+          <div class="cu-item text-green cuIcon-evaluate_fill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-green">某某某后台管理</span>
+              <div class="margin-top-sm">技术栈: Spring-boot + dubbo + mybatis + Mysql + vue + element-ui</div>
+              <div class="margin-top-sm">作用: 给商家设计产品和家居方案、管理店铺产品和家居方案的平台</div>
+              <div class="margin-top-sm">我的工作: 基础开发与搭建、并开发对方案设计和店铺方案管理的功能</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="text-bold margin-top-xl">个人项目 - 各种开发</div>
+          <div class="text-gray margin-top-sm">2015-09 - 至今</div>
+        </div>
+        <div class="cu-timeline">
+          <div class="cu-item text-green cuIcon-evaluate_fill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-green">某某某小程序</span>
+              <div class="margin-top-sm">技术栈: Kotlin + Spring-boot + Jpa + Jooq + Postgresql + Uniapp + 微信小程序</div>
+              <div class="margin-top-sm">作用: 给商家发布线下课程和用户线上报名的平台</div>
+              <div class="margin-top-sm">我的工作: 全部</div>
+              <div class="margin-top-sm">地址: github.com/xxx、github.com/xxx</div>
+            </div>
+          </div>
+          <div class="cu-item text-cyan cuIcon-noticefill">
+            <div class="content shadow-blur">
+              <span class="text-bold text-cyan">某某某平台</span>
+              <div class="margin-top-sm">技术栈: Spring-boot + Jpa + Querydsl + Postgresql + vue + vuetify</div>
+              <div class="margin-top-sm">作用: 管理商品和库存的平台</div>
+              <div class="margin-top-sm">我的工作: 全部</div>
+              <div class="margin-top-sm">地址: github.com/bvvy</div>
+            </div>
+          </div>
+          <div class="cu-item text-red cuIcon-more">
+            <div class="content shadow-blur">
+              <span class="text-bold text-red">等等...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
